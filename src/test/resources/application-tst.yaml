@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    data: 'classpath:data.sql'
+    driver-class-name: org.h2.Driver
+    url: 'jdbc:h2:mem:testdb'
+    username: 'sa'
+    password:
+
+  h2:
+    console:
+      enabled: false
+
+  jackson:
+    time-zone: UTC
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+# Logging
+logging:
+  level:
+    org:
+    springframework: DEBUG
+
+# JWT
+jwt:
+  secret: 'auth-api'
+
+documentation:
+  swagger:
+    enabled: false

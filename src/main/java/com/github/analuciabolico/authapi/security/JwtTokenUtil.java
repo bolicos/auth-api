@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -61,12 +62,13 @@ public class JwtTokenUtil implements Serializable {
     // Cria o token e define tempo de expiração pra ele
     private String doGenerateToken(Map<String, Object> claims, String subject) {
         return Jwts.builder()
+                    .setId(UUID.randomUUID().toString())
                     .setIssuer("https://global-auth-api.herokuapp.com")
                     .setClaims(claims)
                     .setSubject(subject)
                     .setIssuedAt(new Date(System.currentTimeMillis()))
                     .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
-                    .signWith(SignatureAlgorithm.HS512, secret).compact();
+                    .signWith(SignatureAlgorithm.HS256, secret).compact();
     }
 
     // valida o token

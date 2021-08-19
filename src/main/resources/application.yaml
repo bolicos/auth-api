@@ -4,6 +4,15 @@ server:
 spring:
   main:
     allow-bean-definition-overriding: true
+
+  application:
+    name: sgtcc-api
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
   datasource:
     data: "classpath:data.sql"
     driver-class-name: org.h2.Driver
@@ -11,21 +20,12 @@ spring:
     username: "sa"
     password:
 
-  jpa:
-  show-sql: true
-  hibernate:
-    ddl-auto: create
-
   h2:
     console:
       enabled: true
 
   jackson:
     time-zone: UTC
-
-  jpa:
-    hibernate:
-      ddl-auto: create
 
 # Logging
 logging:

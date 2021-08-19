@@ -10,14 +10,14 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
-        default_schema: postgres
+        default_schema: local
   h2:
     console:
       enabled: false
 
   flyway:
     baseline-description: << Schema DEV Flyway >>
-    schemas: postgres
+    schemas: local
     locations: classpath:db/migration/postgres
 
 

@@ -11,8 +11,7 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
-        default_schema: auth-api
-
+        default_schema: auth_api
 
   h2:
     console:
@@ -20,5 +19,5 @@ spring:
 
   flyway:
     baseline-description: << Schema PROD Flyway >>
-    schemas: auth-api
+    schemas: auth_api
     locations: classpath:db/migration/postgres

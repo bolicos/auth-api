@@ -8,5 +8,5 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class JwtResponse implements Serializable {
-    private final String jwtToken;
+    private final String jwt;
 }

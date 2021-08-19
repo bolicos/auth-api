@@ -20,6 +20,10 @@ spring:
   jackson:
     time-zone: UTC
 
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
 # Logging
 logging:
   level:

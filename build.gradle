@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.4.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.flywaydb.flyway' version '7.13.0'
     id 'java'
 }
 
@@ -20,6 +21,7 @@ configurations {
 }
 
 ext {
+    set('flywayVersion', '7.13.0')
     set('jwtVersion', '0.9.1')
     set('swaggerVersion', '2.9.2')
 }
@@ -28,6 +30,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.flywaydb:flyway-core:${flywayVersion}"
     implementation "io.jsonwebtoken:jjwt:${jwtVersion}"
     implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
     implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"

@@ -5,6 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import java.util.Collection;
 import java.util.Set;
@@ -22,12 +23,15 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "USERS")
+@Table(name = "USERS", uniqueConstraints = {
+        @UniqueConstraint(name = "UNIQUE_USERNAME_TABLE_USERS", columnNames = { "username" }) })
 public class AccountCredentials implements UserDetails {
 
     @Id
     private String username;
+
     private String password;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 

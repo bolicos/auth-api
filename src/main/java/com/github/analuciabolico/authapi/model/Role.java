@@ -5,10 +5,11 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.springframework.security.core.GrantedAuthority;
+import javax.persistence.UniqueConstraint;
 
 import com.github.analuciabolico.authapi.model.enums.RoleEnum;
+
+import org.springframework.security.core.GrantedAuthority;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +21,8 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "ROLES")
+@Table(name = "ROLES", uniqueConstraints = {
+        @UniqueConstraint(name = "UNIQUE_NAME_TABLE_ROLES", columnNames = { "name" }) })
 public class Role implements GrantedAuthority {
 
     @Id

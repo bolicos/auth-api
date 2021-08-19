@@ -3,13 +3,17 @@ spring:
     url: ${DATABASE_URL}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
-    schemas: ${DATABASE_SCHEMA}
     driver-class-name: org.postgresql.Driver
+
   jpa:
-    properties:
-      hibernate:
-        default_schema: ${DATABASE_SCHEMA}
+    hibernate:
+      ddl-auto: validate
 
   h2:
     console:
       enabled: false
+
+  flyway:
+    baseline-description: << Schema PROD Flyway >>
+    schemas: ${DATABASE_SCHEMA}
+    locations: classpath:db/migration/postgres

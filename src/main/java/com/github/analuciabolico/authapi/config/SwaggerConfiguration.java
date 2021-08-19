@@ -32,9 +32,11 @@ public class SwaggerConfiguration extends WebSecurityConfigurerAdapter implement
     }
 
     private ApiInfo metaData() {
-        return new ApiInfoBuilder().title("Spring Boot REST AUTH API")
+        return new ApiInfoBuilder()
+        .title("Spring Boot REST AUTH API")
                 .description("\"Spring Boot REST AUTH API is the application that authentication users.\"")
-                .licenseUrl("https://github.com/analuciabolico/auth-api/blob/main/LICENSE\"").version("1.0.0")
+                .licenseUrl("https://github.com/analuciabolico/auth-api/blob/main/LICENSE\"")
+                .version("1.0.0")
                 .license("MIT License").build();
     }
 
@@ -50,6 +52,7 @@ public class SwaggerConfiguration extends WebSecurityConfigurerAdapter implement
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         if (enableSwagger) {
+            registry.addResourceHandler("/h2/**");
             registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
             registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
             registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");

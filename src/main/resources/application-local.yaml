@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://172.17.0.2:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: postgres
+  h2:
+    console:
+      enabled: false
+
+  flyway:
+    baseline-description: << Schema DEV Flyway >>
+    schemas: postgres
+    locations: classpath:db/migration/postgres
+
+
+# Command docker for create
+# docker run --name postgres-13 -e POSTGRES_PASSWORD=postgres -d postgres
+
+# Command docker for the search container IP:
+# sudo docker inspect -f "{{ .NetworkSettings.IPAddress }}" containerNameOrNameImage

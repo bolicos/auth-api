@@ -3,11 +3,16 @@ spring:
     url: ${DATABASE_URL}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
+    schemas: ${DATABASE_SCHEMA}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: auth-api
+
 
   h2:
     console:
@@ -15,5 +20,5 @@ spring:
 
   flyway:
     baseline-description: << Schema PROD Flyway >>
-    schemas: ${DATABASE_SCHEMA}
+    schemas: auth-api
     locations: classpath:db/migration/postgres

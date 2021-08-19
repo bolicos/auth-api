@@ -13,13 +13,6 @@ spring:
     hibernate:
       ddl-auto: create
 
-  datasource:
-    data: "classpath:data.sql"
-    driver-class-name: org.h2.Driver
-    url: "jdbc:h2:mem:testdb"
-    username: "sa"
-    password:
-
   h2:
     console:
       enabled: true

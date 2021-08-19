@@ -47,13 +47,13 @@ cd auth-api
 
 ![BootRun](image/gradle.png)
 
-- Apos isto voce conseguiu executar todos os passos com sucesso, entao acesse [localhost](localhost:8080) para conferir.
+- Apos isto voce conseguiu executar todos os passos com sucesso, entao acesse ![localhost](localhost:8080) para conferir.
 
 
 ---
 
 Listaremos aqui todas as rotas disponiveis nessa API:
-1. URL Base do Sitema: Metodo **GET** [URL base](localhost:8080)
-1. Swagger para voce conseguir acessar todas as outras rotas: Metodo **GET** [Swagger](localhost:8080/swagger-ui.html)
-2. Login para voce se autenticar: Metodo **POST** [Login](localhost:8080/api/login)
-2. Home para voce se autenticar: Metodo **GET** [Home](localhost:8080/api/home)
+1. URL Base do Sitema: Metodo **GET** ![URL base](localhost:8080)
+1. Swagger para voce conseguir acessar todas as outras rotas: Metodo **GET** ![Swagger](localhost:8080/swagger-ui.html)
+2. Login para voce se autenticar: Metodo **POST** ![Login](localhost:8080/api/login)
+2. Home para voce se autenticar: Metodo **GET** ![Home](localhost:8080/api/home)

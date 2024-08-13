@@ -4,8 +4,7 @@ Spring Boot REST AUTH API is the application that authentication users.
 ---
 
 ## Este trabalho foi desenvolvido por:
-ANA CLARA E ANA LUCIA
-
+ANA CLARA E BOLICOS
 ---
 
 ## Foi desenvolvido uma API simples que implementa autenticacao com Token JWT.
